@@ -11,14 +11,14 @@ public class P11656_접미사배열 {
 
 		String s = sc.nextLine();
 		ArrayList<String> arr = new ArrayList<String>();
-		
-		for(int i=0;i<s.length();i++) {
-			arr.add(s.substring(i,s.length()));
+
+		for (int i = 0; i < s.length(); i++) {
+			arr.add(s.substring(i, s.length()));
 		}
-		
+
 		Collections.sort(arr);
-		
-		for(String a:arr) {
+
+		for (String a : arr) {
 			System.out.println(a);
 		}
 	}
