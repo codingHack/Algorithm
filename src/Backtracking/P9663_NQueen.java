@@ -16,18 +16,23 @@ public class P9663_NQueen {
 		return true;
 	}
 
-	static public void dfs(int level) {
+	static public boolean dfs(int level) {
 		if (level == N) {
-			count++;
+			for (int i = 0; i < N; i++) {
+				System.out.println(cols[i]);
+			}
+			return true;
 		} else {
 			for (int i = 0; i < N; i++) {
 				cols[level] = i;
 				if (isPosible(level)) {
-					dfs(level + 1);
+					if(dfs(level + 1)) {
+						break;
+					}
 				}
 			}
-
 		}
+		return true;
 
 	}
 
@@ -35,9 +40,7 @@ public class P9663_NQueen {
 		Scanner sc = new Scanner(System.in);
 		N = sc.nextInt();
 		cols = new int[N];
-		count = 0;
 		dfs(0);
-		System.out.println(count);
 
 	}
 
