@@ -1,4 +1,4 @@
-package Brute;
+package DFSBFS;
 
 import java.io.BufferedReader;
 import java.io.IOException;
