@@ -28,8 +28,8 @@ public class P1759_암호만들기 {
 				System.out.println(s);
 			}
 		} else {
-			for(int i=v+1;i<C;i++) {
-				DFS(i,depth+1,s+in[i]);
+			for (int i = v + 1; i < C; i++) {
+				DFS(i, depth + 1, s + in[i]);
 			}
 		}
 	}
@@ -42,13 +42,12 @@ public class P1759_암호만들기 {
 		C = Integer.parseInt(in[1]);
 
 		in = br.readLine().split(" ");
-		
+
 		Arrays.sort(in);
-		
-		for(int i=0;i<C;i++) {
-			DFS(i,1,""+in[i]);
+
+		for (int i = 0; i < C; i++) {
+			DFS(i, 1, "" + in[i]);
 		}
-			
 
 	}
 
