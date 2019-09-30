@@ -26,8 +26,8 @@ public class P15650_N과M {
 		N = sc.nextInt();
 		M = sc.nextInt();
 		visited = new boolean[N + 1];
-		for(int i=1;i<=N;i++) {			
-			DFS(i, 1, i+"");
+		for (int i = 1; i <= N; i++) {
+			DFS(i, 1, i + "");
 		}
 	}
 
