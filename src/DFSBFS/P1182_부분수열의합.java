@@ -13,15 +13,15 @@ public class P1182_부분수열의합 {
 
 	public static void DFS(int v, int depth, int sum) {
 		if (depth == N) {
-			if(sum==S) {
+			if (sum == S) {
 				count++;
 			}
-		}else {
-			if(sum==S) {
+		} else {
+			if (sum == S) {
 				count++;
 			}
-			for(int i=v+1;i<N;i++) {
-				DFS(i,depth+1,sum+arr[i]);
+			for (int i = v + 1; i < N; i++) {
+				DFS(i, depth + 1, sum + arr[i]);
 			}
 		}
 	}
@@ -34,9 +34,9 @@ public class P1182_부분수열의합 {
 
 		N = Integer.parseInt(st.nextToken());
 		S = Integer.parseInt(st.nextToken());
-		
-		arr=new int[N];
-		count=0;
+
+		arr = new int[N];
+		count = 0;
 
 		st = new StringTokenizer(br.readLine());
 		for (int i = 0; i < N; i++) {
@@ -46,7 +46,7 @@ public class P1182_부분수열의합 {
 		for (int i = 0; i < N; i++) {
 			DFS(i, 1, arr[i]);
 		}
-		
+
 		System.out.println(count);
 
 	}
