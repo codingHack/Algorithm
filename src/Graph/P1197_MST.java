@@ -20,6 +20,7 @@ class NodeMST {
 		this.v = v;
 	}
 }
+
 class P1197_MST {
 
 	public static int V;
