@@ -56,9 +56,8 @@ public class P4386_별자리만들기 {
 			}
 		}
 
-
 		MST();
-		System.out.println(Math.round(count*10000)/10000.0);
+		System.out.println(Math.round(count * 10000) / 10000.0);
 
 	}
 
