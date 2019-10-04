@@ -10,14 +10,14 @@ public class P14910_오르막 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String in[] = br.readLine().split(" ");
 
-		int cur = -1;
+		int cur = -1000000000;
 		for (int i = 0; i < in.length; i++) {
-			int num=Integer.parseInt(in[i]);
-			if (num< cur) {
+			int num = Integer.parseInt(in[i]);
+			if (num < cur) {
 				System.out.println("Bad");
 				return;
 			}
-			cur=num;
+			cur = num;
 		}
 		System.out.println("Good");
 
