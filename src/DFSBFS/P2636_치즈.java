@@ -80,10 +80,10 @@ public class P2636_치즈 {
 		}
 
 		int count = 0;
-		int last=0;
+		int last = 0;
 
 		while (true) {
-			
+
 			// 0근처 1들을 모두 2로 만든
 			boolean finish = true;
 			for (int i = 0; i < H; i++) {
@@ -112,7 +112,7 @@ public class P2636_치즈 {
 			}
 
 			// 2-> 다 0 으로 만든다.
-			last=0;
+			last = 0;
 			for (int i = 0; i < H; i++) {
 				for (int j = 0; j < W; j++) {
 					if (arr[i][j] == 2) {
@@ -164,12 +164,6 @@ public class P2636_치즈 {
 
 		System.out.println(count);
 		System.out.println(last);
-		for (int a[] : arr) {
-			for (int b : a) {
-				System.out.print(b + " ");
-			}
-			System.out.println();
-		}
 
 	}
 
