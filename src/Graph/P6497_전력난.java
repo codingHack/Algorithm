@@ -9,6 +9,10 @@ import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.StringTokenizer;
+// 22 7 40 7 103 35 49
+//  29  47  138  49
+//    76      187
+//         263
 
 class Node6497 {
 	public int s, e, l;
@@ -44,13 +48,13 @@ public class P6497_전력난 {
 
 		while (!q.isEmpty()) {
 			int v = q.poll();
-			visited[v]=true;
+			visited[v] = true;
 			for (Node6497 n : arr[v]) {
 				if (!visited[n.e]) {
 					pq.add(n);
 				}
 			}
-			
+
 			while (!pq.isEmpty()) {
 				Node6497 n = pq.poll();
 				if (!visited[n.e]) {
@@ -69,7 +73,7 @@ public class P6497_전력난 {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;
-		//st = new StringTokenizer(br.readLine());
+		// st = new StringTokenizer(br.readLine());
 
 		while (true) {
 			st = new StringTokenizer(br.readLine());
@@ -83,25 +87,24 @@ public class P6497_전력난 {
 			for (int i = 0; i < numHouse; i++) {
 				arr[i] = new ArrayList<Node6497>();
 			}
-			length=0;
-			sum=0;
+			length = 0;
+			sum = 0;
 
 			for (int i = 0; i < numLen; i++) {
 				st = new StringTokenizer(br.readLine());
 				int start = Integer.parseInt(st.nextToken());
 				int end = Integer.parseInt(st.nextToken());
 				int length = Integer.parseInt(st.nextToken());
-				sum+=length;
+				sum += length;
 
 				arr[start].add(new Node6497(start, end, length));
 				arr[end].add(new Node6497(end, start, length));
 			}
 
 			MST();
-			
-			//System.out.println(sum);
-			System.out.println(sum-length);
-			
+
+			// System.out.println(sum);
+			System.out.println(sum - length);
 
 		}
 	}
