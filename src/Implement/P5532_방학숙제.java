@@ -15,7 +15,7 @@ public class P5532_방학숙제 {
 		int one = (int) Math.ceil(A / C);
 		int two = (int) Math.ceil(B / D);
 
-		System.out.println(L - Math.max(one,two));
+		System.out.println(L - Math.max(one, two));
 	}
 
 }
