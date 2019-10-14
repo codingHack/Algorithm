@@ -9,10 +9,14 @@ import java.util.StringTokenizer;
 
 public class P17252_삼삼한수 {
 	public static int maxPow;
-	public static int number;
+	public static long number;
 	public static boolean can;
 
-	static public void cal(int depth, int sum) {
+	static public void cal(int v, long sum, String s) {
+		// System.out.println(s + " " + sum);
+		if (can) {
+			return;
+		}
 		if (sum == number) {
 			can = true;
 			return;
@@ -20,8 +24,8 @@ public class P17252_삼삼한수 {
 		if (sum > number) {
 			return;
 		}
-		for (int i = depth + 1; i < maxPow; i++) {
-			cal(i, sum + (int) Math.pow(3, i));
+		for (int i = v + 1; i <= maxPow; i++) {
+			cal(i, sum + (long) Math.pow(3, i), s + " " + i);
 		}
 	}
 
@@ -32,14 +36,17 @@ public class P17252_삼삼한수 {
 		StringTokenizer st;
 		st = new StringTokenizer(br.readLine());
 		number = Integer.parseInt(st.nextToken());
-		can = false;
-		maxPow = 0;
-		
-		if(number==0) {
-
+		if (number == 0) {
 			System.out.println("NO");
 			return;
 		}
+		can = false;
+		maxPow = 0;
+		long cur = 0;
+//		for (int i = 0; cur <= number; i++) {
+//			cur = (int) Math.pow(3, i + 1);
+//			maxPow = i;
+//		}
 
 		for (int i = 0;; i++) {
 			int num = (int) Math.pow(3, i);
@@ -53,7 +60,10 @@ public class P17252_삼삼한수 {
 			}
 		}
 
-		cal(-1, 0);
+		cal(-1, 0, "");
+//		for (int i = 0; i <= maxPow; i++) {
+//			cal(i, (int) Math.pow(3, i), " " + i);
+//		}
 		if (can) {
 			System.out.println("YES");
 		} else {
