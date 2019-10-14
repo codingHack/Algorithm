@@ -38,8 +38,8 @@ public class P14890_경사로 {
 						can = false;
 						break;
 					} else {
-						if(cur == arr[i][j] + 1 && j>2) {
-							if(cur==arr[i][j-2]+1) {
+						if (cur == arr[i][j] + 1 && j > 2) {
+							if (cur == arr[i][j - 2] + 1) {
 								can = false;
 								break;
 							}
@@ -59,8 +59,8 @@ public class P14890_경사로 {
 						can = false;
 						break;
 					} else {
-						if(cur == arr[i][j] + 1 && j>2) {
-							if(cur==arr[i][j-2]+1) {
+						if (cur == arr[i][j] + 1 && j > 2) {
+							if (cur == arr[i][j - 2] + 1) {
 								can = false;
 								break;
 							}
