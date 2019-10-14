@@ -90,7 +90,7 @@ public class P2234_성곽 {
 
 		int max = -1;
 		int count = 0;
-		
+
 		visited = new boolean[N][M];
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < M; j++) {
@@ -115,7 +115,7 @@ public class P2234_성곽 {
 				for (int k = 0; k < 4; k++) {
 					if (arr[a][b] >= dir[k]) {
 						arr[a][b] -= dir[k];
-						
+
 						visited = new boolean[N][M];
 						for (int i = 0; i < N; i++) {
 							for (int j = 0; j < M; j++) {
@@ -130,7 +130,7 @@ public class P2234_성곽 {
 								}
 							}
 						}
-						
+
 						arr[a][b] += dir[k];
 					}
 				}
