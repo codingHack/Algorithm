@@ -1,5 +1,4 @@
-package Brute;
-
+package DFSBFS;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -7,18 +6,18 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
-public class P1748_수이어쓰기1 {
-	static int numberCount(int num) {
-		int count = 0;
-		while (true) {
-			if (num != 0) {
-				num /= 10;
-				count++;
-			} else {
-				break;
+public class P15651_N과M3 {
+	static public int N;
+	static public int M;
+
+	public static void dfs(int depth, int v, String s) {
+		if (depth == M) {
+			System.out.println(s);
+		} else {
+			for (int i = 1; i <= N; i++) {
+				dfs(depth + 1, i, s + " " + i);
 			}
 		}
-		return count;
 	}
 
 	static public void main(String[] args) throws IOException {
@@ -26,23 +25,12 @@ public class P1748_수이어쓰기1 {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringTokenizer st;
 		st = new StringTokenizer(br.readLine());
-		int N = Integer.parseInt(st.nextToken());
-
-		int count = 0;
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
 
 		for (int i = 1; i <= N; i++) {
-			count += numberCount(i);
+			dfs(1, i, "" + i);
 		}
-		System.out.println(count);
+
 	}
 }
-
-
-/*
- * 1 2 3 4 5 |
- * 2 1 3 4 5 
- * 1 3 2 4 5 
- * 1 2 4 3 5
- * 1 2 3 5 4
- * 
- */
