@@ -18,13 +18,13 @@ public class P2529_부등호 {
 
 	public static void dfs(int depth, int v, String s) {
 		if (depth == N + 1) {
-			if(min>Long.parseLong(s)) {
-				min=Long.parseLong(s);
-				firstZeroMin= (s.substring(0,1).equals("0"))? true:false;
+			if (min > Long.parseLong(s)) {
+				min = Long.parseLong(s);
+				firstZeroMin = (s.substring(0, 1).equals("0")) ? true : false;
 			}
-			if(max<Long.parseLong(s)) {
-				max=Long.parseLong(s);
-				firstZeroMax= (s.substring(0,1).equals("0"))? true:false;
+			if (max < Long.parseLong(s)) {
+				max = Long.parseLong(s);
+				firstZeroMax = (s.substring(0, 1).equals("0")) ? true : false;
 			}
 		} else {
 			for (int i = 0; i < 10; i++) {
