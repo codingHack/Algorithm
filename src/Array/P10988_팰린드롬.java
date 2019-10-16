@@ -31,7 +31,7 @@ public class P10988_팰린드롬 {
 			start++;
 			end--;
 		}
-		
-		System.out.println(can?1:0);
+
+		System.out.println(can ? 1 : 0);
 	}
 }
