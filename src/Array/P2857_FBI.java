@@ -15,9 +15,6 @@ public class P2857_FBI {
 		int sum = 0;
 		for (int i = 0; i < 5; i++) {
 			String s = br.readLine();
-			if (s.length() > 10) {
-				continue;
-			}
 			for (int j = 0; j < s.length() - 2; j++) {
 				if (s.charAt(j) == 'F' && s.charAt(j + 1) == 'B' && s.charAt(j + 2) == 'I') {
 					sum++;
@@ -30,7 +27,7 @@ public class P2857_FBI {
 		if (sum == 0) {
 			bw.write("HE GOT AWAY!\n");
 		}
-		
+
 		bw.flush();
 	}
 }
