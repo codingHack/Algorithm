@@ -15,40 +15,40 @@ public class P11279_최대힙 {
 
 		st = new StringTokenizer(br.readLine());
 		int N = Integer.parseInt(st.nextToken());
-		int arr[] = new int[2*N + 1];
+		int arr[] = new int[2 * N + 1];
 		int last = 1;
 
 		for (int i = 0; i < N; i++) {
 			int num = Integer.parseInt(br.readLine());
 			if (num == 0) {
-				if(last==1) {
-					bw.write(0+"\n");
+				if (last == 1) {
+					bw.write(0 + "\n");
 					continue;
 				}
-				bw.write(arr[1]+"\n");
-				arr[1]=arr[last-1];
-				arr[last-1]=0;
+				bw.write(arr[1] + "\n");
+				arr[1] = arr[last - 1];
+				arr[last - 1] = 0;
 				last--;
-				int temp=1;
-				while(!(arr[temp]>=arr[2*temp] && arr[temp]>=arr[2*temp+1])) {
-					if(arr[2*temp]>arr[2*temp+1]) {
-						//swap
-						int t=arr[2*temp];
-						arr[2*temp]=arr[temp];
-						arr[temp]=t;
-						temp=temp*2;
-					}else {
-						//swap
-						int t=arr[2*temp+1];
-						arr[2*temp+1]=arr[temp];
-						arr[temp]=t;
-						temp=(temp*2)+1;
+				int temp = 1;
+				while (!(arr[temp] >= arr[2 * temp] && arr[temp] >= arr[2 * temp + 1])) {
+					if (arr[2 * temp] > arr[2 * temp + 1]) {
+						// swap
+						int t = arr[2 * temp];
+						arr[2 * temp] = arr[temp];
+						arr[temp] = t;
+						temp = temp * 2;
+					} else {
+						// swap
+						int t = arr[2 * temp + 1];
+						arr[2 * temp + 1] = arr[temp];
+						arr[temp] = t;
+						temp = (temp * 2) + 1;
 					}
 				}
 			} else {
 				arr[last] = num;
 				int temp = last;
-				int lasst=last;
+				int lasst = last;
 				while (temp != 1) {
 					temp /= 2;
 					if (arr[temp] < arr[lasst]) {
@@ -56,7 +56,7 @@ public class P11279_최대힙 {
 						arr[temp] = arr[lasst];
 						arr[lasst] = t;
 					}
-					lasst/=2;
+					lasst /= 2;
 				}
 				last++;
 			}
@@ -67,8 +67,7 @@ public class P11279_최대힙 {
 //				System.out.print(arr[j]+" ");
 //			}
 		}
-		System.out.println();
 		bw.flush();
-		
+
 	}
 }
