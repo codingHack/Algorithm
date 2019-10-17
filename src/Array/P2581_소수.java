@@ -18,27 +18,28 @@ public class P2581_소수 {
 		int M = Integer.parseInt(st.nextToken());
 
 		boolean eratos[] = new boolean[M + 1];
+		eratos[1] = true;
 
 		for (int i = 2; i <= M / 2; i++) {
-			if(!eratos[i]) {
-				for(int j=2;j*i<=M;j++) {
-					eratos[j*i]=true;
+			if (!eratos[i]) {
+				for (int j = 2; j * i <= M; j++) {
+					eratos[j * i] = true;
 				}
 			}
 		}
-		
-		int sum=0;
-		int min=M+1;
-		
-		for(int i=N;i<=M;i++) {
-			if(!eratos[i]) {
-				sum+=i;
-				min=Math.min(min, i);
+
+		int sum = 0;
+		int min = M + 1;
+
+		for (int i = N; i <= M; i++) {
+			if (!eratos[i]) {
+				sum += i;
+				min = Math.min(min, i);
 			}
 		}
-		if(sum==0) {
+		if (sum == 0) {
 			System.out.println(-1);
-		}else {
+		} else {
 			System.out.println(sum);
 			System.out.println(min);
 		}
