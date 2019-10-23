@@ -73,11 +73,11 @@ public class P3055_탈출 {
 				for (int k = 0; k < 4; k++) {
 					int nx = x + dx[k];
 					int ny = y + dy[k];
-					if(nx<0|| ny<0||nx>=H||ny>=W) {
+					if (nx < 0 || ny < 0 || nx >= H || ny >= W) {
 						continue;
-					}else {
-						if(arr[nx][ny]!=ROCK && arr[nx][ny]!=BE_CUR && arr[nx][ny]!=WATER) {
-							arr[nx][ny]=WATER;
+					} else {
+						if (arr[nx][ny] != ROCK && arr[nx][ny] != BE_CUR && arr[nx][ny] != WATER) {
+							arr[nx][ny] = WATER;
 							wx2.add(nx);
 							wy2.add(ny);
 						}
@@ -89,8 +89,7 @@ public class P3055_탈출 {
 				wx1.add(0, wx2.poll());
 				wy1.add(0, wy2.poll());
 			}
-			
-			
+
 			// 비버 이동.
 			while (!qx1.isEmpty()) {
 				int x = qx1.poll();

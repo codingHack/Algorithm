@@ -23,7 +23,7 @@ public class P2164_카드2 {
 		}
 
 		while (q.size() != 1) {
-			q.poll();
+			System.out.print(q.poll() + " ");
 			if (q.size() == 1) {
 				System.out.println(q.poll());
 				return;
