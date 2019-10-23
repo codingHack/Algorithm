@@ -9,31 +9,28 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class P1526_금민수 {
-	static public void main(String[] args) throws IOException {
+public class P2164_카드2 {
+	static public void main(String []args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out)); 
 		StringTokenizer st;
 		st = new StringTokenizer(br.readLine());
-		int N = Integer.parseInt(st.nextToken());
-
+		int N=Integer.parseInt(st.nextToken());
+		
 		Queue<Integer> q = new LinkedList<Integer>();
-		q.add(4);
-		q.add(7);
-
-		int last = 4;
-
-		while (true) {
-			int p = q.poll();
-			if (p > N) {
-				break;
-			} else {
-				q.add(p * 10 + 4);
-				q.add(p * 10 + 7);
-				last = p;
-			}
+		for(int i=1;i<=N;i++) {
+			q.add(i);
 		}
-
-		System.out.println(last);
+		
+		while(q.size()!=1) {
+			q.poll();
+			if(q.size()==1) {
+				System.out.println(q.poll());
+				return;
+			}
+			int n =q.poll();
+			q.add(n);
+		}
+		System.out.println(q.poll());
 	}
 }
