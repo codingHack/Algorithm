@@ -18,7 +18,6 @@ public class P2979_주차 {
 		int C = Integer.parseInt(st.nextToken());
 
 		int arr[] = new int[101];
-		System.out.println();
 		for (int i = 0; i < 3; i++) {
 			st = new StringTokenizer(br.readLine());
 			int a = Integer.parseInt(st.nextToken());
