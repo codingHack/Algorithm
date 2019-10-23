@@ -23,17 +23,17 @@ public class P1592_영식이친구들 {
 		int time = 0;
 
 		while (true) {
-			if (count[cur] == M-1) {
+			if (count[cur] == M - 1) {
 				System.out.println(time);
 				return;
 			}
 			time++;
 			count[cur]++;
-			System.out.println(cur);
+			// System.out.println(cur);
 			if (count[cur] % 2 == 0) {
-				cur-=L;
-				if(cur<=0) {
-					cur=N+cur;
+				cur -= L;
+				if (cur <= 0) {
+					cur = N + cur;
 				}
 			} else {
 				// 시계L
@@ -42,15 +42,13 @@ public class P1592_영식이친구들 {
 					cur -= N;
 				}
 			}
-			
+
 			/*
 			 * 1_> 1 N 1-> 2 N-1 1-> 3 N-2
 			 * 
 			 * 2->4 1 N N-1 N-2
 			 * 
-			 * 3-> (4) 2 1 N N-1
-			 * 5  4 3 2
-			 * 5 6   8 
+			 * 3-> (4) 2 1 N N-1 5 4 3 2 5 6 8
 			 */
 
 		}
