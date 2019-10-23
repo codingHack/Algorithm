@@ -49,16 +49,16 @@ public class P2160_그림비교 {
 		for (int i = 0; i < N - 1; i++) {
 			for (int j = i + 1; j < N; j++) {
 				int num = comparePicture(arr[i], arr[j]);
-				System.out.println(i+" "+j+" "+num);
+				// System.out.println(i+" "+j+" "+num);
 				if (num < min) {
-					min=num;
+					min = num;
 					a = i;
 					b = j;
 				}
 			}
 		}
 
-		System.out.println((a+1) + " " + (b+1));
+		System.out.println((a + 1) + " " + (b + 1));
 
 	}
 }
